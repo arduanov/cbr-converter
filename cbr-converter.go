@@ -49,7 +49,7 @@ func recalculate(currencies map[string]float64, currencyIn string, valueIn float
 	bigValueIn := big.NewFloat(valueIn)
 
 	rc = make(map[string]*big.Float, 30)
-	currencyVal, ok := currencies[currencyIn];
+	currencyVal, ok := currencies[currencyIn]
 	if !ok {
 		err = errors.New("Invalid Currency")
 		return
