@@ -55,7 +55,7 @@ func recalculate(currencies map[string]float64, currencyIn string, valueIn float
 		return
 	}
 
-	bigCurrencyVal := new(big.Float).SetFloat64(currencyVal)
+	bigCurrencyVal := big.NewFloat(currencyVal)
 	for k, v := range currencies {
 		if k == currencyIn {
 			continue
