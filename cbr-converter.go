@@ -1,13 +1,13 @@
 package main
 
 import (
-	"flag"
 	"errors"
-	"log"
+	"flag"
 	"fmt"
-	"math/big"
 	"github.com/leekchan/accounting"
 	"gopkg.in/kolomiichenko/cbr-currency-go.v1"
+	"log"
+	"math/big"
 	"sort"
 )
 
@@ -31,7 +31,6 @@ func main() {
 	rc, err := recalculate(currencies, *currencyIn, *valueIn)
 	check(err)
 
-
 	//sorting by code
 	var keys []string
 	for k := range rc {
@@ -40,7 +39,7 @@ func main() {
 	sort.Strings(keys)
 
 	ac := accounting.Accounting{Precision: 2}
-	for _,k := range keys {
+	for _, k := range keys {
 		fmt.Printf("%s %s\n", k, ac.FormatMoneyBigFloat(rc[k]))
 	}
 }
